@@ -1,4 +1,8 @@
-f [ "${LENGTH}" == "" ]; then
+#!/bin/bash
+
+LENGTH=$1
+
+if [ "${LENGTH}" == "" ]; then
 LENGTH="15"
 fi
 
@@ -7,10 +11,11 @@ LENGTH="8"
 echo "Passwd length needs to be at least 8 char"
 fi
 
-    MATRIX="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+MATRIX="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 MATRIXS=".#-+"
 s=1
+
 while [ "${s:=1}" -le "2" ]
 do
     PASSS="$PASSS${MATRIXS:$(($RANDOM%${#MATRIXS})):1}"
@@ -30,4 +35,3 @@ do
 
 done
 echo "$PASS"
-
