@@ -1,0 +1,1 @@
+Simple password generator with special character inside.
